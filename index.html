@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mine Sweeper</title>
+    <link rel="icon" type="image/x-icon" href="assets\favicon_io\favicon.ico">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body onload="onInit()">
+     <div class="orientation-blocker">
+        <div class="blocker-content">
+            <span>🔄</span>
+            <p>Please rotate your device</p>
+        </div>
+    </div>
+    <header>
+        <nav class="navbar">
+            <div class="dark-mode-btn" onclick="darkMode()" style="cursor:pointer;">🌓</div>
+            <div class="controls">
+                <button onclick="setLevel(4, 2)">Easy</button>
+                <button onclick="setLevel(8, 14)">Medium</button>
+                <button onclick="setLevel(12, 32)">Hard</button>
+            </div>
+            <div class="music-btn" onclick="toggleMusic()" style="cursor:pointer;">🔇</div>
+        </nav>
+    </header>
+   
+    <main>
+        <h1 class="msg">Mineswiper</h1>
+        <div class="main-container">
+            <div><span class="icon">🧻</span> : <span class="flags-counter">0</span></div>
+            <div class="hints-container">
+                <span class="hint-btn" onclick="useHint(this)">💡</span>
+                <span class="hint-btn" onclick="useHint(this)">💡</span>
+                <span class="hint-btn" onclick="useHint(this)">💡</span>
+            </div>
+            <div class="restart-btn" onclick="restart()" style="cursor:pointer;">😊</div>
+            <div class="lives">📰📰📰</div>
+            <div class="timer">⏱ : 0.000</div>
+        </div>
+        <div class="board-container">
+            <table>
+                <tbody class="board"></tbody>
+            </table>
+        </div>
+        <div class="actions-container">
+            <button class="undo-click" onclick="undo()">Undo</button>
+            <div class="safe-click-wrapper">
+                <button class="safe-click" onclick="onSafeClick()">Safe Click</button>
+                <div class="safe-click-count-container">
+                    <span class="safe-click-count">3</span> clicks left
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>This game was built by &copy;Shaniki</p>
+    </footer>
+    <script src="JS/script.js"></script>
+    <!-- <script src="JS/demo.js"></script> -->
+</body>
+
+</html>
+
+<!-- אשמח שתבדוק על שורות מיותרות, או לא נכונות.
+  אם צריך להוסיף או לשנות משהו כדי שהקוד יעבוד כמו
+  שצריך לפני תחילת המשחק, במהלכו ובסופו בכל רמות הקושי
+  ובדיקת כל הכפתורים והפיצ'רים גם במחשב וגם בטלפון, תודה רבה -->
